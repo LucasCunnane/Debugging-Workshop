@@ -39,6 +39,7 @@ def process_order(order, products, customers, tax_rates):
     tax = calculate_tax(customer, subtotal, tax_rates)
     shipping = calculate_shipping(subtotal)
 
+
     total = discounts["discounted_subtotal"] + tax + shipping
 
     reserve_inventory(products, order)
