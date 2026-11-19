@@ -13,7 +13,8 @@ def coupon_discount_amount(coupon_code, subtotal):
         return 10
 
     if code == "FIVEOFF":
-        return subtotal * 0.05
+        # Subtotal is supposed to be minus $5.00 not multiplied by 5%
+        return subtotal - 5.00
 
     return 0
 
