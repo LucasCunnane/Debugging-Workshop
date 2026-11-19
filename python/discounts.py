@@ -25,8 +25,8 @@ def bulk_discount_amount(items, products):
         product = next((p for p in products if p["id"] == item["product_id"]), None)
         if product is None:
             continue
-
-        if item["quantity"] > BULK_DISCOUNT_THRESHOLD:
+            #Changed 'item["quantity"] > BULK_DISCOUNT_THRESHOLD:' to 'item["quantity"] >= BULK_DISCOUNT_THRESHOLD:'
+        if item["quantity"] >= BULK_DISCOUNT_THRESHOLD:
             line_total = product["price"] * item["quantity"]
             discount += line_total * BULK_DISCOUNT_RATE
 
