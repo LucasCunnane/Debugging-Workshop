@@ -37,7 +37,7 @@ function processOrder(order, products, customers, taxRates) {
   const tax = calculateTax(customer, subtotal, taxRates);
   const shipping = calculateShipping(subtotal);
 
-  const total = discounts.discountedSubtotal + tax + shipping;
+  const total = discounts["discountedSubtotal"] + tax + shipping;
 
   reserveInventory(products, order);
 
