@@ -1,5 +1,9 @@
-def is_non_empty_string(value):
-    return isinstance(value, str) and len(value) > 0
+def is_non_empty_string(value): 
+    # this needs a trim() to remove whitespace from the string before checking its length
+    if not isinstance(value, str):
+        return False
+    value = value.strip() #strip the whitespace 
+    return   len(value) > 0 # compare the new length of the string after whitespace 
 
 
 def find_product_by_id(products, product_id):
